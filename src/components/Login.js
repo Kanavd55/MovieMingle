@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import Header from './Header'
 import { BG_IMG } from '../utils/constants';
 import checkValidData from "../utils/validate";
+import { auth } from '../utils/firebase';
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile } from "firebase/auth";
 
 const Login = () => {
     const [isSignInForm,setIsSignInForm]=useState(true);
@@ -18,8 +20,48 @@ const Login = () => {
     const handleSubmitForm=(e)=>{
         e.preventDefault();
         const message=checkValidData(email.current.value,password.current.value,userName);
-        console.log(message)
         setErrorMessage(message);
+
+        if(message) return;
+        console.log(message)
+
+        if(isSignInForm){
+            //Sign In Logic
+            signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+                .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+                })
+                .catch((error) => {
+                    //const errorCode = error.code;
+                    const errorMessage = error.message;
+                    setErrorMessage(errorMessage);
+                    });
+        }else{
+            //Sign Up Logic
+            createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+                .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+                updateProfile(user, {
+                    displayName: userName.current.value,
+                        }).then(() => {
+                        // Profile updated!
+                        // ...
+                        }).catch((error) => {
+                        // An error occurred
+                        // ...
+                        });
+                    })
+                .catch((error) => {
+                    //const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // ..
+                    setErrorMessage(errorMessage);
+  });
+        }
     }
 
   return (
