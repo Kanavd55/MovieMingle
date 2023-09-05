@@ -12,7 +12,6 @@ const MovieInfo = () => {
 
   return (
     <div className="bg-black">
-      {console.log("render")}
       <Header />
       <MovieInfoCard movieInfo={movieInfo} />
       <MoviesList title="Similar Movies" movies={similarMovies} />

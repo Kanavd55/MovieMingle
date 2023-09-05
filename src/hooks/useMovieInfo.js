@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
 
 const useMovieInfo = (movieId) => {
@@ -33,9 +33,9 @@ const useMovieInfo = (movieId) => {
   }, [movieId]);
 
   return {
-    movieInfo:movieInfo,
-    similarMovies:similarMovies
-  }
+    movieInfo: movieInfo,
+    similarMovies: similarMovies,
+  };
 };
 
 export default useMovieInfo;
