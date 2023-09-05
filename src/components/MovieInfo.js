@@ -1,13 +1,23 @@
-import React from 'react'
-import Header from './Header'
-import MovieInfoCard from './MovieInfoCard'
-const MovieInfo = () => {
-  return (
-    <div className='bg-black'>
-        <Header/>
-        <MovieInfoCard/>
-    </div>
-  )
-}
+import React from "react";
+import Header from "./Header";
+import MovieInfoCard from "./MovieInfoCard";
+import { useParams } from "react-router-dom";
+import MoviesList from "./MoviesList";
+import useMovieInfo from "../hooks/useMovieInfo";
 
-export default MovieInfo
+const MovieInfo = () => {
+  const { movieId } = useParams();
+
+  const { movieInfo, similarMovies } = useMovieInfo(movieId);
+
+  return (
+    <div className="bg-black">
+      {console.log("render")}
+      <Header />
+      <MovieInfoCard movieInfo={movieInfo} />
+      <MoviesList title="Similar Movies" movies={similarMovies} />
+    </div>
+  );
+};
+
+export default MovieInfo;

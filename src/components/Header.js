@@ -3,7 +3,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 
 const Header = () => {
@@ -51,7 +51,7 @@ const Header = () => {
   return (
     <div className="absolute bg-black p-2 flex justify-between w-full">
       <div className=" text-red-600 font-sans text-4xl p-4 ml-4 font-bold">
-        MovieMonK
+        <Link to={"/browse"}>MovieMonK</Link>
       </div>
       <div>
         {user && (
