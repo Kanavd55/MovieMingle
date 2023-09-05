@@ -9,7 +9,7 @@ const VideoBackground = ({movieId}) => {
     
   return (
     <>
-    {trailer && (<div className='w-full'>
+    {trailer && (<div className='w-full -z-10'>
       <iframe src={"https://www.youtube.com/embed/"+trailer?.key+"?autoplay=1&mute=1&controls=0&modestbranding=1"} 
       title="YouTube video player" 
       frameBorder="0" 

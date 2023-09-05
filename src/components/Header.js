@@ -34,19 +34,23 @@ const Header = () => {
             displayName: displayName,
           })
         );
-        navigate("/browse");
+        if(window.location.pathname==="/"){
+          navigate("/browse");
+        }
         // ...
       } else {
         // User is signed out
         dispatch(removeUser());
-        navigate("/");
+        if(window.location.pathname!=="/"){
+          navigate("/");
+        }
         // ...
       }
     });
   }, []);
   return (
     <div className="absolute bg-black p-2 flex justify-between w-full">
-      <div className=" text-red-500 font-sans text-4xl p-4 ml-4 font-bold">
+      <div className=" text-red-600 font-sans text-4xl p-4 ml-4 font-bold">
         MovieMonK
       </div>
       <div>

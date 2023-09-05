@@ -8,11 +8,10 @@ import "swiper/css/navigation";
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ movies, title }) => {
-  console.log(movies)
   return (<>
     {movies &&(<div className="flex flex-col w-11/12  mx-auto p-4 ">
       <div className="p-1 m-1 text-white font-bold text-2xl">{title}</div>
-      <div className="w-full h-auto ">
+      <div className="w-[100%] h-auto ">
         <Swiper
           className="p-5 flex flex-row"
           modules={[Pagination, Navigation, Scrollbar]}
@@ -25,7 +24,7 @@ const MovieList = ({ movies, title }) => {
           scrollbar={{ draggable: true }}
         >
           {movies.map((movie)=>{
-            return <SwiperSlide key={movie.id}><MovieCard title={movie.original_title}  posterPath={movie.poster_path}/></SwiperSlide>
+            return <SwiperSlide key={movie.id}><MovieCard title={movie.original_title} id={movie.id}  posterPath={movie.poster_path}/></SwiperSlide>
           })}
         </Swiper>
       </div>
