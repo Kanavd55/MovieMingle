@@ -4,7 +4,6 @@ import Fade from "react-reveal/Fade";
 import { Link } from "react-router-dom";
 
 const MovieInfoCard = ({ movieInfo }) => {
-  console.log(IMG_CDN+movieInfo?.backdrop_path)
   return (
     <div className="h-auto bg-stone-900 -z-10">
       {movieInfo && (
