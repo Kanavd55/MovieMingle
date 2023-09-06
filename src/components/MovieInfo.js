@@ -4,17 +4,20 @@ import MovieInfoCard from "./MovieInfoCard";
 import { useParams } from "react-router-dom";
 import MoviesList from "./MoviesList";
 import useMovieInfo from "../hooks/useMovieInfo";
+import CastList from "./CastList";
+
 
 const MovieInfo = () => {
   const { movieId } = useParams();
 
-  const { movieInfo, similarMovies } = useMovieInfo(movieId);
+  const { movieInfo, recommendations,casts } = useMovieInfo(movieId);
 
   return (
-    <div className="bg-black">
+    <div className="bg-stone-900">
       <Header />
       <MovieInfoCard movieInfo={movieInfo} />
-      <MoviesList title="Similar Movies" movies={similarMovies} />
+      <CastList casts={casts} title="Movie Casts"/>
+      <MoviesList title="Recommendataions" movies={recommendations} />
     </div>
   );
 };

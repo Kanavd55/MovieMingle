@@ -1,4 +1,4 @@
-import { API_OPTIONS, nowPlayingMovies, upComing } from "../utils/constants";
+import { API_OPTIONS, upComing } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addUpComing } from "../utils/moviesSlice";    
 import { useEffect } from "react";

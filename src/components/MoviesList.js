@@ -13,8 +13,9 @@ import { Autoplay,Pagination} from 'swiper/modules';
 const MoviesList = ({ title, movies }) => {
   return (
     <div className="w-10/12 mx-auto text-white">
-      <p className="p-2 m-2 text-2xl font-bold">{title}</p>
       {movies && (
+        <>
+        <p className="p-2 m-2 text-2xl font-bold">{movies.length? title: ""}</p>
         <div className="">
           <Swiper
           className="ml-2"
@@ -33,8 +34,8 @@ const MoviesList = ({ title, movies }) => {
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 5,
-            spaceBetween: 50,
+            slidesPerView: 7,
+            spaceBetween: 10,
           },
         }}
         autoplay={{
@@ -46,9 +47,9 @@ const MoviesList = ({ title, movies }) => {
       >
           {movies.map((movie) => {
             return (
-              <SwiperSlide>
-              <Link to={"/movieInfo/" + movie.id} key={movie.id}>
-                <div className="w-36 p-1 m-2 ">
+              <SwiperSlide key={movie.id}>
+              <Link to={"/movieInfo/" + movie.id} >
+                <div className="w-36 p-1 m-2 hover:underline">
                   <img
                     className="rounded-lg"
                     src={IMG_CDN + movie.poster_path}
@@ -63,6 +64,7 @@ const MoviesList = ({ title, movies }) => {
           )}
           </Swiper>
         </div>
+        </>
       )}
     </div>
   );
