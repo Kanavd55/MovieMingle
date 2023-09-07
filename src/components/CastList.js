@@ -8,13 +8,13 @@ const CastList = ({casts,title}) => {
   return (
     <div className="w-10/12 mx-auto text-white">
       {filter && (
-        <>
-        <p className="p-2 m-2 text-2xl  font-bold">{filter.lengh!==0 ? title :""}</p>
-        <div className=" flex w-full flex-row flex-wrap">
+        <div className="">
+        <p className="p-2 m-2 text-2xl text-center md:text-left  font-bold">{filter.lengh!==0 ? title :""}</p>
+        <div className=" flex w-full mx-auto flex-row flex-wrap justify-center">
           {filter.map((cast) => {
             return (
               <Link to={"/person/"+cast.id } key={cast.id}>
-                <div className="mx-auto w-44 p-1 m-2">
+                <div className="m-2 mx-auto w-44 p-1 ">
                   <img
                     className="rounded-lg"
                     src={IMG_CDN + cast.profile_path}
@@ -28,7 +28,7 @@ const CastList = ({casts,title}) => {
           }
           )}
         </div>
-        </>
+        </div>
       )}
     </div>
   )

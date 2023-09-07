@@ -2,13 +2,14 @@ import React from 'react'
 import { IMG_CDN } from '../utils/constants';
 import { Link } from 'react-router-dom';
 import Fade from "react-reveal/Fade";
+import Loader from './Loader';
 
 const TvShowInfoCard = ({tvShowInfo}) => {
     console.log(tvShowInfo);
   return (
     <div className='h-screen bg-stone-900'>
         <div className="h-auto bg-stone-900 -z-10">
-      {tvShowInfo && (
+      {tvShowInfo ? (
         <div className=" mx-auto pt-56 md:pt-28 rounded-lg bg-stone-800 w-8/12 flex flex-wrap">
           <div className="w-full p-4 md:p-8 mx-auto md:w-1/2 ">
             <Fade left>
@@ -34,6 +35,8 @@ const TvShowInfoCard = ({tvShowInfo}) => {
             </Fade>
           </div>
         </div>
+      ):(
+        <Loader/>
       )}
     </div>
     </div>

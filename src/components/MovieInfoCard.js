@@ -2,11 +2,12 @@ import React from "react";
 import { IMG_CDN } from "../utils/constants";
 import Fade from "react-reveal/Fade";
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 
 const MovieInfoCard = ({ movieInfo }) => {
   return (
     <div className="h-auto bg-stone-900 -z-10">
-      {movieInfo && (
+      {movieInfo ? (
         <div className=" mx-auto pt-56 md:pt-28 rounded-lg bg-stone-800 w-8/12 flex flex-wrap">
           <div className="w-full p-4 md:p-8 mx-auto md:w-1/2 ">
             <Fade left>
@@ -31,6 +32,8 @@ const MovieInfoCard = ({ movieInfo }) => {
             </Fade>
           </div>
         </div>
+      ):(
+        <Loader/>
       )}
     </div>
   );
