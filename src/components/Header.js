@@ -49,23 +49,25 @@ const Header = () => {
     });
   }, []);
   return (
-    <div className="absolute bg-stone-800 shadow-lg p-2 py-3  flex justify-between w-full">
+    <div className="absolute bg-stone-800 shadow-lg p-2 py-3 opacity-95 flex justify-between w-full">
       <div className=" text-red-600 font-sans text-4xl p-4 ml-4 font-bold">
         <Link to={"/browse"}>MovieMonK</Link>
       </div>
       <div>
+        
+        {user && (<>
         <Link to={"/search"}>
       <button
             className="text-white text-lg font-bold  p-5 mr-5"
           >Search 🔎
           </button></Link>
-        {user && (
           <button
             className="text-white text-lg font-bold  p-5 mr-5 hover:underline "
             onClick={handleSignOut}
           >
             Log out
           </button>
+          </>
         )}
       </div>
     </div>

@@ -5,6 +5,7 @@ import Browse from "./Browse";
 import MovieInfo from "./MovieInfo";
 import SearchPage from "./SearchPage";
 import PersonPage from "./PersonPage";
+import TvPage from "./TvPage";
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -27,6 +28,10 @@ const Body = () => {
     {
       path:"/person/:personId",
       element:<PersonPage/>
+    },
+    {
+      path:"/tvShow/:showId",
+      element:<TvPage/>
     }
   ]);
   return (

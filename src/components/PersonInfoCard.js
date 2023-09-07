@@ -23,7 +23,7 @@ const PersonInfoCard = ({personInfo}) => {
               </p>
               <p className="my-4">
                 <span className="text-gray-200 text-xl font-semibold my-3">Biography</span>
-                <p className="text-gray-300 break-words my-2">{personInfo.biography.split(" ", 60).join(" ")}...</p>
+                <p className="text-gray-300 break-words my-2">{personInfo.biography?.split(" ", 60).join(" ")}...</p>
               </p>
               <p className="my-6 text-gray-300 ">Birthday :-{personInfo.birthday}</p>
               <p className="my-6 text-gray-300 ">Place of Birth :-{personInfo.place_of_birth}</p>

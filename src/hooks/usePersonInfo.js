@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { API_OPTIONS } from '../utils/constants'
 
 const usePersonInfo = (personId) => {
@@ -14,7 +14,7 @@ const usePersonInfo = (personId) => {
     const getPersonMovies=async ()=>{
         const data=await fetch("https://api.themoviedb.org/3/person/"+personId+"/movie_credits?language=en-US",API_OPTIONS);
         const json=await data.json();
-        const filter = await json.cast.filter((movie) => {
+        const filter = await json?.cast?.filter((movie) => {
             return movie.poster_path !== null;
           });
         setPersonMovies(filter);
