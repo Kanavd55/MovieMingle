@@ -27,7 +27,7 @@ const MovieInfoCard = ({ movieInfo }) => {
                 <span className="text-gray-200 text-xl font-semibold my-3">Overview</span>
                 <p className="text-gray-300 break-words my-2">{movieInfo.overview.split(" ", 60).join(" ")}...</p>
               </p>
-              <p className="my-6 text-gray-300 ">Released on :-{movieInfo.release_date}</p>
+              <p className="my-6 text-gray-300 ">Released date :-{movieInfo.release_date}</p>
             <Link to={movieInfo.homepage } target="_blank" className="bg-red-700 text-white rounded-lg p-3 hover:bg-red-800">Watch Now</Link>
             </Fade>
           </div>

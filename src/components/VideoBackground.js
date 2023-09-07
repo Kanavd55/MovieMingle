@@ -10,9 +10,9 @@ const VideoBackground = ({movieId,backgroundImage}) => {
     
   return (
     <>
-    {trailer ? (<div className='w-full -z-10'>
+    {trailer ? (<div className='w-full -z-10 pt-20 md:pt-0'>
 
-    <iframe src={"https://www.youtube.com/embed/"+trailer?.key+"?autoplay=1&mute=1&controls=0&modestbranding=1"} 
+    <iframe src={"https://www.youtube.com/embed/"+trailer?.key+"?autoplay=1&mute=1&controls=0&modestbranding=1&vq=hd1080"} 
       title="YouTube video player" 
       frameBorder="0" 
       className='w-full aspect-video'></iframe>
