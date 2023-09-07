@@ -7,6 +7,8 @@ import SearchPage from "./SearchPage";
 import PersonPage from "./PersonPage";
 import TvPage from "./TvPage";
 import MoviePage from "./MoviePage";
+import TvShowPage from "./TvShowPage";
+import TrendingPersonPage from "./TrendingPersonPage";
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -36,6 +38,12 @@ const Body = () => {
     },{
       path:"/movies",
       element:<MoviePage/>
+    },{
+      path:"/tvShow",
+      element:<TvShowPage/>
+    },{
+      path:"/person",
+      element:<TrendingPersonPage/>
     }
   ]);
   return (

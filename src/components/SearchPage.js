@@ -54,7 +54,7 @@ const SearchPage = () => {
           <input
             ref={search}
             className="w-9/12 p-2 bg-stone-800  border-b-0"
-            placeholder="Search for Person,Movies or TV Shows"
+            placeholder="Search for your favourite Person,Movies or TV Shows"
             type="text"
           />
           <button

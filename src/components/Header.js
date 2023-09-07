@@ -56,6 +56,24 @@ const Header = () => {
       <div>
         
         {user && (<>
+        <Link to={"/movies"}>
+        <button
+            className="text-white text-lg font-bold  p-5 mr-5"
+          >Movies
+          </button>
+        </Link>
+        <Link to={"/tvShow"}>
+        <button
+            className="text-white text-lg font-bold  p-5 mr-5"
+          >Tv Shows
+          </button>
+        </Link>
+        <Link to={"/person"}>
+        <button
+            className="text-white text-lg font-bold  p-5 mr-5"
+          >Person
+          </button>
+        </Link>
         <Link to={"/search"}>
       <button
             className="text-white text-lg font-bold  p-5 mr-5"

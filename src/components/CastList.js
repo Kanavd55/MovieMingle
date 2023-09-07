@@ -14,7 +14,7 @@ const CastList = ({casts,title}) => {
           {filter.map((cast) => {
             return (
               <Link to={"/person/"+cast.id } key={cast.id}>
-                <div className="m-2 mx-auto w-44 p-1 ">
+                <div className="m-2 mx-auto w-32 md:w-44 p-1 ">
                   <img
                     className="rounded-lg"
                     src={IMG_CDN + cast.profile_path}

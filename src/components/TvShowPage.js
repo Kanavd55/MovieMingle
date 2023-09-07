@@ -5,15 +5,15 @@ import Loader from "./Loader";
 import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
 
-const MoviePage = () => {
-  const [trendingMovies, setTrendingMovies] = useState([]);
+const TvShowPage = () => {
+  const [trendingShows, setTrendingShows] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
 
-  const getTrendingMovies = async () => {
+  const getTrendingShows = async () => {
     if (totalPages && totalPages === page) return;
     const data = await fetch(
-      "https://api.themoviedb.org/3/trending/movie/day?language=en-US&page=" +
+      "https://api.themoviedb.org/3/trending/tv/day?language=en-US&page=" +
         page,
       API_OPTIONS
     );
@@ -22,28 +22,28 @@ const MoviePage = () => {
     const filter = await json?.results.filter((data) => {
       return data.poster_path !== null;
     });
-    const list = trendingMovies;
+    const list = trendingShows;
     const newList = await list.concat(filter);
-    setTrendingMovies(newList);
+    setTrendingShows(newList);
   };
 
   useEffect(() => {
-    getTrendingMovies();
+    getTrendingShows();
   }, [page]);
   return (
     <div className="h-screen text-white bg-stone-900">
       <Header />
       <div className="pt-24 bg-stone-900">
-        {trendingMovies?.length > 0 ? (
+        {trendingShows?.length > 0 ? (
           <div className="w-full mx-auto bg-stone-900 p-10 pt-20">
-            <p className=" text-2xl font-semibold">Trending Movies</p>
+            <p className=" text-2xl font-semibold">Trending Shows</p>
             <div className="flex mx-auto mt-4 p-2 justify-between flex-wrap">
-              {trendingMovies?.map((movie) => {
+              {trendingShows?.map((show) => {
                 return (
-                  <Link to={"/movieInfo/" + movie.id} key={movie.id}>
+                  <Link to={"/tvShow/" + show.id} key={show.id}>
                     <ItemCard
-                      title={movie.original_title}
-                      poster={movie.poster_path}
+                      title={show.original_name}
+                      poster={show.poster_path}
                     />
                   </Link>
                 );
@@ -66,4 +66,4 @@ const MoviePage = () => {
   );
 };
 
-export default MoviePage;
+export default TvShowPage;
