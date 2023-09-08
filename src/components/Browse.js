@@ -6,6 +6,7 @@ import MovieContainer from "./MovieContainer";
 import usePopular from "../hooks/usePopular";
 import useTopRated from "../hooks/useTopRated";
 import useUpComing from "../hooks/useUpComing";
+import Footer from "./Footer"
 
 const Browse = () => {
   useNowPlayingMovies();
@@ -17,6 +18,7 @@ const Browse = () => {
       <Header />
       <VideoContainer />
       <MovieContainer/>
+      <Footer/>
     </div>
   );
 };

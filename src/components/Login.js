@@ -83,7 +83,7 @@ const Login = () => {
 
   return (
     <div>
-      <Header />
+      <Header/>
       <div className="">
         <img alt="bg" className="fixed -z-10" src={BG_IMG} />
       </div>

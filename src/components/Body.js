@@ -10,12 +10,14 @@ import MoviePage from "./MoviePage";
 import TvShowPage from "./TvShowPage";
 import TrendingPersonPage from "./TrendingPersonPage";
 import DeveloperPage from "./DeveloperPage";
+import Error from "./Error";
 
 const Body = () => {
   const appRouter = createBrowserRouter([
     {
       path: "/",
       element: <Login />,
+      errorElement:<Error/>
     },
     {
       path: "/browse",

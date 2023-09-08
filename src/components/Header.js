@@ -48,7 +48,7 @@ const Header = () => {
         // ...
       }
     });
-  }, []);
+  }, [auth]);
   return (
     <>
     <div className="absolute z-20 bg-stone-800 p-2 py-3 opacity-95 shadow-md flex justify-between w-full">

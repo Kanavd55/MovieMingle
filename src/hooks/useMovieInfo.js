@@ -35,7 +35,6 @@ const useMovieInfo = (movieId) => {
     const filterData=json.results.filter((data)=>{
         return (data.name==="Official Trailer" && data.type==="Trailer")
     })
-    console.log(filterData);
     const trailer=filterData?.length>0 ?filterData[0]:json.results[0];
     setTrailer(trailer);
 }

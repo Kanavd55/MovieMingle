@@ -12,9 +12,9 @@ const MovieInfoCard = ({ movieInfo, trailer }) => {
         <>
           {showTrailer ? (
             <>
-              <div className="absolute w-full bg-stone-900 opacity-95 z-30">
-                <div className="w-full md:w-10/12 mx-auto pt-80 mt-80 sm:mt-48 md:mt-0 md:pt-10">
-                  <div className="flex flex-row justify-end">
+              <div className="absolute w-full opacity-95 bg-stone-900 z-30">
+                <div className="w-full md:w-10/12 mx-auto pt-80 mt-80 sm:mt-48 md:mt-0 md:pt-10 xl:pt-0">
+                  <div className="flex flex-row opacity-95 justify-end">
                     <button
                       className="text-white p-2"
                       onClick={() => setShowTrailer(false)}
@@ -70,12 +70,12 @@ const MovieInfoCard = ({ movieInfo, trailer }) => {
                   Released date :-{movieInfo.release_date}
                 </p>
                 <div className="flex flex-start">
-                  <button
+                  {trailer ?( <button
                     onClick={() => setShowTrailer(true)}
                     className="bg-red-700 mx-2 text-white rounded-lg p-3 hover:bg-red-800"
                   >
                     Watch Trailer
-                  </button>
+                  </button>):""}
                   <Link
                     to={movieInfo.homepage}
                     target="_blank"
