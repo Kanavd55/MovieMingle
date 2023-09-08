@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 
 const Header = () => {
+  const [showLinks,setShowLinks]=useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
@@ -49,13 +50,12 @@ const Header = () => {
     });
   }, []);
   return (
-    <div className="absolute bg-stone-800 shadow-lg p-2 py-3 opacity-95 flex justify-between w-full">
+    <>
+    <div className="absolute z-20 bg-stone-800 p-2 py-3 opacity-95 shadow-md flex justify-between w-full">
       <div className=" text-red-600 font-sans text-4xl p-4 ml-4 font-bold">
         <Link to={"/browse"}>MovieMonK</Link>
       </div>
-      <div>
-        
-        {user && (<>
+        {user && (<><div className="hidden xl:flex xl:flex-row">
         <Link to={"/movies"}>
         <button
             className="text-white text-lg font-bold  p-5 mr-5"
@@ -91,10 +91,53 @@ const Header = () => {
           >
             Log out
           </button>
+          </div>
+          <div onClick={()=>setShowLinks(!showLinks)} className="text-white text-lg font-bold  p-5 mr-5 flex xl:hidden">X
+          </div>
           </>
         )}
+    </div>{user && (<>
+    {showLinks ? (
+      <div className="flex flex-col absolute w-screen z-10  bg-stone-800  pt-24 justify-center mx-auto xl:hidden">
+        <Link to={"/movies"}>
+  <button
+      className="text-white text-lg font-bold p-5 w-full mx-auto hover:underline"
+    >Movies
+    </button>
+  </Link>
+  <Link to={"/tvShow"}>
+  <button
+      className="text-white text-lg font-bold  p-5 w-full mx-auto hover:underline"
+    >Tv Shows
+    </button>
+  </Link>
+  <Link to={"/person"}>
+  <button
+      className="text-white text-lg font-bold  p-5 w-full mx-auto hover:underline"
+    >Person
+    </button>
+  </Link>
+  <Link to={"/developerInfo"}>
+  <button
+      className="text-white text-lg font-bold  p-5 mx-auto w-full hover:underline"
+    >Developer
+    </button>
+  </Link>
+  <Link to={"/search"}>
+<button
+      className="text-white text-lg font-bold  p-5 mx-auto w-full hover:underline"
+    >Search
+    </button></Link>
+    <button
+      className="text-white text-lg font-bold  p-5 mx-auto w-full hover:underline"
+      onClick={handleSignOut}
+    >
+      Log out
+    </button>
       </div>
-    </div>
+    ):""}
+    </>)}
+    </>
   );
 };
 

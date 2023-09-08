@@ -50,16 +50,16 @@ const SearchPage = () => {
     <div className="bg-stone-900 h-screen">
       <Header />
       <div className="w-full pt-40 text-white">
-        <form className="w-8/12 mx-auto border rounded-md">
+        <form className="w-11/12 md:w-8/12 mx-auto border rounded-md">
           <input
             ref={search}
-            className="w-9/12 p-2 bg-stone-800  border-b-0"
+            className="w-10/12 md:w-9/12 p-2 text-sm md:text-base bg-stone-800  border-b-0"
             placeholder="Search for your favourite Person,Movies or TV Shows"
             type="text"
           />
           <button
             onClick={handleSearch}
-            className="bg-red-600 w-3/12 p-2 border font-semibold"
+            className="bg-red-600 w-2/12 md:w-3/12 p-2 border text-sm md:text-base font-semibold"
           >
             Search
           </button>

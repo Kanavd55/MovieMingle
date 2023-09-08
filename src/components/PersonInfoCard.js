@@ -9,7 +9,7 @@ const PersonInfoCard = ({ personInfo }) => {
   return (
     <div className="h-auto bg-stone-900 -z-10">
       {personInfo ? (
-        <div className=" mx-auto pt-56 md:pt-28 rounded-lg bg-stone-800 w-8/12 flex flex-wrap">
+        <div className=" mx-auto pt-32 md:pt-28 rounded-lg bg-stone-800 w-8/12 flex flex-wrap">
           <div className="w-full p-4 md:p-8 mx-auto md:w-1/2 ">
             <Fade left>
               <img
