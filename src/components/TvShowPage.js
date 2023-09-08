@@ -4,6 +4,7 @@ import { API_OPTIONS} from "../utils/constants";
 import Loader from "./Loader";
 import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
+import Footer from "./Footer";
 
 const TvShowPage = () => {
   const [trendingShows, setTrendingShows] = useState([]);
@@ -62,6 +63,7 @@ const TvShowPage = () => {
           <Loader />
         )}
       </div>
+      <Footer/>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import MoviesList from "./MoviesList";
 import useMovieInfo from "../hooks/useMovieInfo";
 import CastList from "./CastList";
+import Footer from "./Footer";
 
 
 const MovieInfo = () => {
@@ -18,6 +19,7 @@ const MovieInfo = () => {
       <MovieInfoCard movieInfo={movieInfo} trailer={trailer}/>
       <CastList casts={casts} title="Movie Casts"/>
       <MoviesList title="Recommendataions" movies={recommendations} />
+      <Footer/>
     </div>
   );
 };

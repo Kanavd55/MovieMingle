@@ -3,6 +3,7 @@ import Header from "./Header";
 import { API_OPTIONS, IMG_CDN } from "../utils/constants";
 import { Link } from "react-router-dom";
 import { Fade } from "react-reveal";
+import Footer from "./Footer";
 
 const SearchPage = () => {
   const search = useRef(null);
@@ -65,13 +66,13 @@ const SearchPage = () => {
           </button>
         </form>
       </div>
-      <div className="w-full bg-stone-900 h-auto mt-14">
+      <div className="w-full bg-stone-900 h-auto mt-14 pb-24 md:pb-36 xl:pb-48">
         {movies && (
           <div className="mx-auto w-10/12">
             <p className="text-white font-semibold text-4xl m-2">
               {movies.length !== 0 ? "Movies" : ""}
             </p>
-            <div className="flex flex-wrap justify-start">
+            <div className="flex flex-wrap justify-center md:justify-start">
               {movies?.map((movie) => {
                 return (
                   <Link to={"/movieInfo/" + movie.id} key={movie.id}>
@@ -151,6 +152,7 @@ const SearchPage = () => {
             </Fade>
           )}
       </div>
+      <Footer/>
     </div>
   );
 };

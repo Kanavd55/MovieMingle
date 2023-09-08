@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import { Fade } from "react-reveal";
+import Footer from "./Footer";
 
 const DeveloperInfoCard = () => {
   const [userInfo, setUserInfo] = useState();
@@ -15,10 +16,11 @@ const DeveloperInfoCard = () => {
     getUserInfo();
   }, []);
   return (
+    <>
     <div className="h-screen bg-stone-900">
-      <div className="h-auto bg-stone-900 -z-10">
+      <div className="h-auto bg-stone-900 pb-20 -z-10">
         {userInfo ? (
-          <div className=" mx-auto pt-32 md:pt-28 rounded-lg pb-10 bg-stone-800 w-8/12 flex flex-wrap">
+          <div className=" mx-auto pt-32 pb-10 md:pt-28 rounded-lg bg-stone-800 w-8/12 flex flex-wrap">
             <div className="w-full p-4 md:p-8 mx-auto md:w-1/2 ">
               <Fade left>
                 <img
@@ -51,21 +53,21 @@ const DeveloperInfoCard = () => {
                   <Link
                     to={"https://www.linkedin.com/in/kd28/"}
                     target="_blank"
-                    className="bg-sky-800 mr-2 font-semibold text-white rounded-lg p-3 hover:bg-sky-900"
+                    className="bg-sky-800 mr-2 my-2 font-semibold text-white rounded-lg p-3 hover:bg-sky-900"
                   >
                     LinkedIn
                   </Link>
                   <Link
                     to={"https://github.com/Kanavd55"}
                     target="_blank"
-                    className=" text-white font-semibold rounded-lg p-3 mx-2 bg-black hover:bg-gray-950"
+                    className=" my-2 text-white font-semibold rounded-lg p-3 mx-2 bg-black hover:bg-gray-950"
                   >
                     Github
                   </Link>
                   <Link
                     to={"mailto:kanavdahat55@gmail.com"}
                     target="_blank"
-                    className=" text-red-700 font-semibold rounded-lg p-3 mx-2 bg-white hover:bg-gray-300"
+                    className="my-2 text-red-700 font-semibold rounded-lg p-3 mx-2 bg-white hover:bg-gray-300"
                   >
                     Gmail 
                   </Link>
@@ -77,7 +79,9 @@ const DeveloperInfoCard = () => {
           <Loader />
         )}
       </div>
+      <Footer/>
     </div>
+    </>
   );
 };
 

@@ -4,16 +4,20 @@ import { API_OPTIONS} from "../utils/constants";
 import Loader from "./Loader";
 import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
+import Footer from "./Footer";
+import { Trending_Movies_URL } from "../utils/constants";
 
 const MoviePage = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
 
+  {trendingMovies && console.log(trendingMovies)};
+
   const getTrendingMovies = async () => {
     if (totalPages && totalPages === page) return;
     const data = await fetch(
-      "https://api.themoviedb.org/3/trending/movie/day?language=en-US&page=" +
+      Trending_Movies_URL +
         page,
       API_OPTIONS
     );
@@ -62,6 +66,7 @@ const MoviePage = () => {
           <Loader />
         )}
       </div>
+      <Footer/>
     </div>
   );
 };

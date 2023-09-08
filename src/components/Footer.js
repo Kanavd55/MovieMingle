@@ -6,7 +6,7 @@ const Footer = () => {
         <div className='w-10/12 mx-auto h-auto flex-wrap items-center flex justify-around'>
         <div className=' w-[40%] md:w-[20%] p-1'>
             <div className='flex justify-start'>
-                <span className='font-semibold text-center p-2'>MovieMonk</span>
+                <span className='font-semibold text-center p-2'>CineUniverse</span>
             </div>
             <p className='break-words w-full'>Copyright @2023. MovieMonk By Kanav</p>     
         </div>

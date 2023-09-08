@@ -8,9 +8,10 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
+import Footer from "./Footer";
 
 const Login = () => {
-  const [isSignInForm, setIsSignInForm] = useState(true);
+  const [isSignInForm, setIsSignInForm] = useState(false);
   const [errorMessage, setErrorMessage] = useState();
 
   const userName = useRef(null);
@@ -82,12 +83,12 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <Header/>
       <div className="">
-        <img alt="bg" className="fixed -z-10" src={BG_IMG} />
+        <img alt="bg" className="fixed object-cover h-screen w-full -z-10" src={BG_IMG} />
       </div>
-      <form className=" w-3/12 absolute mx-auto right-0 left-0 my-[13%] bg-black p-8 opacity-95 rounded-md text-white">
+      <form className="w-8/12 md:w-5/12 xl:w-3/12 absolute mx-auto right-0 left-0 my-[30%] md:my-[13%] bg-black p-8 opacity-95 rounded-md text-white">
         <h1 className="font-bold text-3xl">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>

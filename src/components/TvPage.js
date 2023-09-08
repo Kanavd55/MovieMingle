@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import useTvShowInfo from '../hooks/useTvShowInfo';
 import TvShowInfoCard from './TvShowInfoCard';
 import CastList from './CastList';
+import Footer from './Footer';
 
 const TvPage = () => {
     const {showId}=useParams();
@@ -13,6 +14,7 @@ const TvPage = () => {
         <Header/>
         <TvShowInfoCard tvShowInfo={tvShow}/>
         <CastList title="Top Casts" casts={casts}/>
+        <Footer/>
     </div>
   )
 }

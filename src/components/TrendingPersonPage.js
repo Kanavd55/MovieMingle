@@ -4,6 +4,7 @@ import { API_OPTIONS} from "../utils/constants";
 import Loader from "./Loader";
 import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
+import Footer from "./Footer";
 
 const TrendingPersonPage = () => {
     const [trendingPeople, setTrendingPeople] = useState([]);
@@ -62,6 +63,7 @@ const TrendingPersonPage = () => {
             <Loader />
           )}
         </div>
+        <Footer/>
       </div>
     );
   

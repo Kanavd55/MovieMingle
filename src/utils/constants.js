@@ -17,4 +17,10 @@ export const API_OPTIONS = {
   export const topRated="https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
 
   export const upComing="https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
+
+  export const NAV_IMG_URL="https://cdn-icons-png.flaticon.com/128/812/812847.png";
+
+  export const NAV_CROSS_IMG_URL="https://cdn-icons-png.flaticon.com/128/1828/1828666.png";
+
+  export const Trending_Movies_URL="https://api.themoviedb.org/3/trending/movie/day?language=en-US&page=";
   

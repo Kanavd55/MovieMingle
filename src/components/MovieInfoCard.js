@@ -12,9 +12,9 @@ const MovieInfoCard = ({ movieInfo, trailer }) => {
         <>
           {showTrailer ? (
             <>
-              <div className="absolute w-full opacity-95 bg-stone-900 z-30">
+              <div className="absolute w-full z-30">
                 <div className="w-full md:w-10/12 mx-auto pt-80 mt-80 sm:mt-48 md:mt-0 md:pt-10 xl:pt-0">
-                  <div className="flex flex-row opacity-95 justify-end">
+                  <div className="flex flex-row bg-stone-900 opacity-95 justify-end">
                     <button
                       className="text-white p-2"
                       onClick={() => setShowTrailer(false)}

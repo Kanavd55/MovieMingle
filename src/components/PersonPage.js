@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import usePersonInfo from '../hooks/usePersonInfo';
 import PersonInfoCard from './PersonInfoCard';
 import MoviesList from './MoviesList';
+import Footer from './Footer';
 
 const PersonPage = () => {
     const {personId}=useParams();
@@ -13,6 +14,7 @@ const PersonPage = () => {
       <Header/>
       <PersonInfoCard personInfo={personInfo}/>
       <MoviesList title="Known For" movies={personMovies}/>
+      <Footer/>
     </div>
   )
 }
