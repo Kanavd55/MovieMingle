@@ -74,6 +74,12 @@ const Header = () => {
           >Person
           </button>
         </Link>
+        <Link to={"/developerInfo"}>
+        <button
+            className="text-white text-lg font-bold  p-5 mr-5"
+          >Developer
+          </button>
+        </Link>
         <Link to={"/search"}>
       <button
             className="text-white text-lg font-bold  p-5 mr-5"

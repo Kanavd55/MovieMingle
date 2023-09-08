@@ -9,6 +9,7 @@ import TvPage from "./TvPage";
 import MoviePage from "./MoviePage";
 import TvShowPage from "./TvShowPage";
 import TrendingPersonPage from "./TrendingPersonPage";
+import DeveloperPage from "./DeveloperPage";
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -44,6 +45,10 @@ const Body = () => {
     },{
       path:"/person",
       element:<TrendingPersonPage/>
+    },
+    {
+      path:"/developerInfo",
+      element:<DeveloperPage/>
     }
   ]);
   return (

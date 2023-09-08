@@ -1,10 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import MoviesList from "./MoviesList";
+import Loader from "./Loader";
 
 const MovieContainer = () => {
   const movies = useSelector((store) => store.movies);
-  if (!movies) return;
+  if (!movies) return (<Loader/>);
 
   const { nowPlayingMovies, popular, topRated, upComing } = movies;
   return (
