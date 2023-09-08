@@ -5,6 +5,7 @@ const useMovieInfo = (movieId) => {
   const [movieInfo, setMovieInfo] = useState(null);
   const [recommendations, setRecommendations] = useState(null);
   const [casts,setCasts]=useState(null);
+  const [trailer,setTrailer]=useState(null);
   const getMovieInfo = async () => {
     const data = await fetch(
       "https://api.themoviedb.org/3/movie/" + movieId + "?language=en-US",
@@ -28,6 +29,17 @@ const useMovieInfo = (movieId) => {
     setRecommendations(filter);
   };
 
+  const getMovieTrailer=async ()=>{
+    const data=await fetch("https://api.themoviedb.org/3/movie/"+movieId+"/videos?language=en-US",API_OPTIONS);
+    const json=await data.json();
+    const filterData=json.results.filter((data)=>{
+        return (data.name==="Official Trailer" && data.type==="Trailer")
+    })
+    console.log(filterData);
+    const trailer=filterData?.length>0 ?filterData[0]:json.results[0];
+    setTrailer(trailer);
+}
+
   const getCredits=async ()=>{
     const data =await fetch("https://api.themoviedb.org/3/movie/"+movieId+"/credits?language=en-US",API_OPTIONS);
     const json=await data.json();
@@ -38,12 +50,14 @@ const useMovieInfo = (movieId) => {
     getMovieInfo();
     getRecommendations();
     getCredits();
+    getMovieTrailer();
   }, [movieId]);
 
   return {
     movieInfo: movieInfo,
     recommendations: recommendations,
-    casts:casts
+    casts:casts,
+    trailer:trailer
   };
 };
 

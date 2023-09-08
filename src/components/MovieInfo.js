@@ -10,12 +10,12 @@ import CastList from "./CastList";
 const MovieInfo = () => {
   const { movieId } = useParams();
 
-  const { movieInfo, recommendations,casts } = useMovieInfo(movieId);
+  const { movieInfo, recommendations,casts,trailer } = useMovieInfo(movieId);
 
   return (
     <div className="bg-stone-900">
       <Header />
-      <MovieInfoCard movieInfo={movieInfo} />
+      <MovieInfoCard movieInfo={movieInfo} trailer={trailer}/>
       <CastList casts={casts} title="Movie Casts"/>
       <MoviesList title="Recommendataions" movies={recommendations} />
     </div>
