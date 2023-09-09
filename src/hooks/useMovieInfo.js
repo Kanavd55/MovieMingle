@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { API_OPTIONS } from "../utils/constants";
+import { API_OPTIONS, Get_Movie_Credits_Url, Get_Movie_Info_Url1, Get_Movie_Info_Url2, Get_Movie_Recommendations_Url, Get_Movie_Videos_Url } from "../utils/constants";
 
 const useMovieInfo = (movieId) => {
   const [movieInfo, setMovieInfo] = useState(null);
@@ -8,7 +8,7 @@ const useMovieInfo = (movieId) => {
   const [trailer,setTrailer]=useState(null);
   const getMovieInfo = async () => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/movie/" + movieId + "?language=en-US",
+      Get_Movie_Info_Url1 + movieId + Get_Movie_Info_Url2,
       API_OPTIONS
     );
     const json = await data.json();
@@ -17,9 +17,9 @@ const useMovieInfo = (movieId) => {
 
   const getRecommendations = async () => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/movie/" +
+      Get_Movie_Info_Url1 +
         movieId +
-        "/recommendations?language=en-US&page=1",
+        Get_Movie_Recommendations_Url,
       API_OPTIONS
     );
     const json = await data.json();
@@ -30,7 +30,7 @@ const useMovieInfo = (movieId) => {
   };
 
   const getMovieTrailer=async ()=>{
-    const data=await fetch("https://api.themoviedb.org/3/movie/"+movieId+"/videos?language=en-US",API_OPTIONS);
+    const data=await fetch(Get_Movie_Info_Url1+movieId+Get_Movie_Videos_Url,API_OPTIONS);
     const json=await data.json();
     const filterData=json.results.filter((data)=>{
         return (data.name==="Official Trailer" && data.type==="Trailer")
@@ -40,7 +40,7 @@ const useMovieInfo = (movieId) => {
 }
 
   const getCredits=async ()=>{
-    const data =await fetch("https://api.themoviedb.org/3/movie/"+movieId+"/credits?language=en-US",API_OPTIONS);
+    const data =await fetch(Get_Movie_Info_Url1+movieId+Get_Movie_Credits_Url,API_OPTIONS);
     const json=await data.json();
     setCasts(json.cast);
   }

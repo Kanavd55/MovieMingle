@@ -1,9 +1,10 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
-import { API_OPTIONS, IMG_CDN } from "../utils/constants";
+import { API_OPTIONS, IMG_CDN, Search_Api_URL1, Search_Api_URL2 } from "../utils/constants";
 import { Link } from "react-router-dom";
 import { Fade } from "react-reveal";
 import Footer from "./Footer";
+import toast from "react-hot-toast";
 
 const SearchPage = () => {
   const search = useRef(null);
@@ -13,9 +14,9 @@ const SearchPage = () => {
 
   const getSearchItems = async (searchData) => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/search/multi?query=" +
+      Search_Api_URL1 +
         searchData +
-        "&include_adult=false&language=en-US&page=1",
+        Search_Api_URL2,
       API_OPTIONS
     );
     const json = await data.json();
@@ -46,6 +47,7 @@ const SearchPage = () => {
     e.preventDefault();
     const searchData = search.current.value.split(" ").join("%20");
     getSearchItems(searchData);
+    toast("Search button clicked");
   };
   return (
     <div className="bg-stone-900 h-screen">

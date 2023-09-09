@@ -2,6 +2,7 @@ import React from 'react'
 import useTrailer from '../hooks/useTrailer'
 import { useSelector } from 'react-redux';
 import Loader from './Loader';
+import { Get_Youtube_Video_URL1, Get_Youtube_Video_URL2 } from '../utils/constants';
 
 
 const VideoBackground = ({movieId,backgroundImage}) => {
@@ -12,7 +13,7 @@ const VideoBackground = ({movieId,backgroundImage}) => {
     <>
     {trailer ? (<div className='w-full -z-10 pt-20 md:pt-0'>
 
-    <iframe src={"https://www.youtube.com/embed/"+trailer?.key+"?autoplay=1&mute=1&controls=0&modestbranding=1&vq=hd1080"} 
+    <iframe src={Get_Youtube_Video_URL1+trailer?.key+Get_Youtube_Video_URL2+"&controls=0"} 
       title="YouTube video player" 
       frameBorder="0" 
       className='w-full aspect-video'></iframe>

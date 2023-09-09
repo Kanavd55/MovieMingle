@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import { Fade } from "react-reveal";
 import Footer from "./Footer";
+import { Get_Developer_Info_URL } from "../utils/constants";
 
 const DeveloperInfoCard = () => {
   const [userInfo, setUserInfo] = useState();
 
   const getUserInfo = async () => {
-    const data = await fetch("https://api.github.com/users/Kanavd55");
+    const data = await fetch(Get_Developer_Info_URL);
     const json = await data.json();
     setUserInfo(json);
   };

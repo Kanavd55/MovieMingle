@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
-import { API_OPTIONS} from "../utils/constants";
+import { API_OPTIONS, Get_Trending_Personalities_URL} from "../utils/constants";
 import Loader from "./Loader";
 import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
@@ -14,7 +14,7 @@ const TrendingPersonPage = () => {
     const getTrendingPeople = async () => {
       if (totalPages && totalPages === page) return;
       const data = await fetch(
-        "https://api.themoviedb.org/3/trending/person/day?language=en-US&page=" +
+        Get_Trending_Personalities_URL +
           page,
         API_OPTIONS
       );
@@ -37,7 +37,7 @@ const TrendingPersonPage = () => {
         <div className="pt-24 bg-stone-900">
           {trendingPeople?.length > 0 ? (
             <div className="w-full mx-auto bg-stone-900 p-10 pt-20">
-              <p className=" text-2xl font-semibold">Trending Persons</p>
+              <p className=" text-2xl font-semibold">Trending Personalities</p>
               <div className="flex mx-auto mt-4 p-2 justify-between flex-wrap">
                 {trendingPeople?.map((person) => {
                   return (

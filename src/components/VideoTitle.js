@@ -10,7 +10,7 @@ const VideoTitle = ({title,overview}) => {
      <div className='text-lg sm:text-xl md:text-3xl p-2 m-2 font-bold'>
         {title}
      </div>
-     <div className='hidden lg:block p-2 m-2'>
+     <div className='hidden text-gray-300 lg:block p-2 m-2'>
         {overview}
      </div>
     </div>

@@ -6,13 +6,12 @@ import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
 import Footer from "./Footer";
 import { Trending_Movies_URL } from "../utils/constants";
+import toast from "react-hot-toast";
 
 const MoviePage = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
-
-  {trendingMovies && console.log(trendingMovies)};
 
   const getTrendingMovies = async () => {
     if (totalPages && totalPages === page) return;
@@ -55,7 +54,10 @@ const MoviePage = () => {
             </div>
             <div className="w-full flex justify-center">
               <button
-                onClick={() => setPage(page + 1)}
+                onClick={() =>{
+                  toast("View More Clicked") 
+                  setPage(page + 1)
+                } }
                 className="bg-red-700 hover:bg-red-800 rounded-lg text-sm p-2"
               >
                 View More

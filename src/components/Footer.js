@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -8,26 +9,26 @@ const Footer = () => {
             <div className='flex justify-start'>
                 <span className='font-semibold text-center p-2'>CineUniverse</span>
             </div>
-            <p className='break-words w-full'>Copyright @2023. MovieMonk By Kanav</p>     
+            <p className='break-words text-gray-300 w-full'>Copyright @2023. CineUniverse By Kanav</p>     
         </div>
         <div className='w-[40%] md:w-[20%] p-2'>
             <ul className='m-1 p-1'>
                 <li className='font-semibold m-2 '>
                     Company
                 </li>
-                <li className='m-2'>
-                    About Us
+                <li className='text-gray-300 m-2'>
+                    <Link to="/developerInfo">Developer</Link>
                 </li>
-                <li className='m-2'>
-                    Movies
+                <li className='text-gray-300 m-2'>
+                    <Link to="/movies">Movies</Link>
                 </li>
-                <li className='m-2'>
+                <li className='text-gray-300 m-2'>
                     Career
                 </li>
             </ul>
         </div>
         <div className='w-[40%] md:w-[20%] p-2'>
-            <ul className='m-1 p-1'>
+            <ul className='m-1 text-gray-300 p-1'>
                 <li className='font-semibold m-2'>
                     Legal
                 </li>
@@ -47,13 +48,13 @@ const Footer = () => {
                 <li className='font-semibold m-2'>
                     Contact Us
                 </li>
-                <li className='m-2'>
+                <li className='m-2 text-gray-300'>
                     Vijay Nagar,Delhi-110009
                 </li>
-                <li className='m-2'>
-                    9096473197
+                <li className='m-2 text-gray-300'>
+                    +919999999999
                 </li>
-                <li className='m-2 break-words'>
+                <li className='m-2 break-words text-gray-300'>
                     kanavdahat55@gmail.com
                 </li>
             </ul>

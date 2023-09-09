@@ -8,10 +8,10 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import Footer from "./Footer";
+import toast from "react-hot-toast";
 
 const Login = () => {
-  const [isSignInForm, setIsSignInForm] = useState(false);
+  const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState();
 
   const userName = useRef(null);
@@ -30,7 +30,7 @@ const Login = () => {
       userName
     );
     setErrorMessage(message);
-
+    
     if (message) return;
 
     if (isSignInForm) {
@@ -43,6 +43,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
+          toast("User logged in")
           // ...
         })
         .catch((error) => {
@@ -66,6 +67,7 @@ const Login = () => {
           })
             .then(() => {
               // Profile updated!
+              toast("User is created and logged in now!")
               // ...
             })
             .catch((error) => {
@@ -78,6 +80,7 @@ const Login = () => {
           const errorMessage = error.message;
           // ..
           setErrorMessage(errorMessage);
+          toast(error);
         });
     }
   };

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { IMG_CDN } from "../utils/constants";
+import { Get_Youtube_Video_URL1, Get_Youtube_Video_URL2, IMG_CDN } from "../utils/constants";
 import Fade from "react-reveal/Fade";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
+import toast from "react-hot-toast";
 
 const MovieInfoCard = ({ movieInfo, trailer }) => {
   const [showTrailer, setShowTrailer] = useState(false);
@@ -17,16 +18,19 @@ const MovieInfoCard = ({ movieInfo, trailer }) => {
                   <div className="flex flex-row bg-stone-900 opacity-95 justify-end">
                     <button
                       className="text-white p-2"
-                      onClick={() => setShowTrailer(false)}
+                      onClick={() =>{
+                        setShowTrailer(false)
+                        toast("Movie trailer closed")
+                      } }
                     >
                       Close
                     </button>
                   </div>
                   <iframe
                     src={
-                      "https://www.youtube.com/embed/" +
+                      Get_Youtube_Video_URL1 +
                       trailer?.key +
-                      "?autoplay=1&mute=1&modestbranding=1&vq=hd1080"
+                      Get_Youtube_Video_URL2
                     }
                     title="YouTube video player"
                     frameBorder="0"
@@ -71,7 +75,10 @@ const MovieInfoCard = ({ movieInfo, trailer }) => {
                 </p>
                 <div className="flex flex-start">
                   {trailer ?( <button
-                    onClick={() => setShowTrailer(true)}
+                    onClick={() => {
+                      setShowTrailer(true)
+                      toast("Movie Trailer Played");
+                    }}
                     className="bg-red-700 mx-2 text-white rounded-lg p-3 hover:bg-red-800"
                   >
                     Watch Trailer

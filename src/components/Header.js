@@ -6,6 +6,7 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { NAV_CROSS_IMG_URL, NAV_IMG_URL } from "../utils/constants";
+import toast from "react-hot-toast";
 
 const Header = () => {
   const [showLinks,setShowLinks]=useState(false);
@@ -17,6 +18,7 @@ const Header = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
+        toast("User logged out")
       })
       .catch((error) => {
         // An error happened.
