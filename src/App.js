@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Provider store={appStore}>
-      <Toaster/>
+      <Toaster position="top-left"/>
       <Body/>
       </Provider>
     </div>
