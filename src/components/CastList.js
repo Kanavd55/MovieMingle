@@ -1,6 +1,7 @@
 import React from 'react'
 import { IMG_CDN } from '../utils/constants';
 import { Link } from 'react-router-dom';
+import { Fade } from 'react-reveal';
 
 const CastList = ({casts,title}) => {
 
@@ -8,6 +9,7 @@ const CastList = ({casts,title}) => {
   return (
     <div className="w-10/12 mx-auto text-white">
       {filter && (
+        <Fade left>
         <div className="">
         <p className="p-2 m-2 text-2xl text-center md:text-left  font-bold">{filter.lengh!==0 ? title :""}</p>
         <div className=" flex w-full mx-auto flex-row flex-wrap justify-center">
@@ -29,6 +31,7 @@ const CastList = ({casts,title}) => {
           )}
         </div>
         </div>
+        </Fade>
       )}
     </div>
   )

@@ -18,7 +18,7 @@ const Header = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
-        toast("User logged out")
+        toast(user.displayName +" is logged out")
       })
       .catch((error) => {
         // An error happened.
@@ -51,7 +51,7 @@ const Header = () => {
         // ...
       }
     });
-  }, [auth]);
+  }, []);
   return (
     <>
     <div className="absolute z-20 bg-stone-800 p-2 py-3 opacity-95 shadow-md flex justify-between w-full">
@@ -61,37 +61,37 @@ const Header = () => {
         {user && (<><div className="hidden xl:flex xl:flex-row">
           <Link to={"/browse"}>
           <button
-            className="text-white text-lg font-bold  p-5 mr-5"
+            className="text-white hover:underline text-lg font-bold  p-5 mr-5"
           >Home
           </button>
           </Link>
         <Link to={"/movies"}>
         <button
-            className="text-white text-lg font-bold  p-5 mr-5"
+            className="text-white hover:underline text-lg font-bold  p-5 mr-5"
           >Movies
           </button>
         </Link>
         <Link to={"/tvShow"}>
         <button
-            className="text-white text-lg font-bold  p-5 mr-5"
+            className="text-white hover:underline text-lg font-bold  p-5 mr-5"
           >Tv Shows
           </button>
         </Link>
         <Link to={"/person"}>
         <button
-            className="text-white text-lg font-bold  p-5 mr-5"
+            className="text-white hover:underline text-lg font-bold  p-5 mr-5"
           >Person
           </button>
         </Link>
         <Link to={"/developerInfo"}>
         <button
-            className="text-white text-lg font-bold  p-5 mr-5"
+            className="text-white text-lg hover:underline font-bold  p-5 mr-5"
           >Developer
           </button>
         </Link>
         <Link to={"/search"}>
       <button
-            className="text-white text-lg font-bold  p-5 mr-5"
+            className="text-white text-lg hover:underline font-bold  p-5 mr-5"
           >Search 🔎
           </button></Link>
           <button
@@ -102,8 +102,8 @@ const Header = () => {
           </button>
           </div>
           <div onClick={()=>setShowLinks(!showLinks)} className="text-white text-lg font-bold  p-5 mr-5 flex xl:hidden">{!showLinks ?(
-            <img className=" h-6" src={NAV_IMG_URL}/>
-          ):<img className=" h-6" src={NAV_CROSS_IMG_URL}/>}
+            <img className=" h-6" src={NAV_IMG_URL} alt="Nav-Bar"/>
+          ):<img className=" h-6" src={NAV_CROSS_IMG_URL} alt="Nav-Bar-Cross"/>}
           </div>
           </>
         )}

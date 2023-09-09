@@ -7,6 +7,7 @@ import ItemCard from "./ItemCard";
 import Footer from "./Footer";
 import { Trending_Movies_URL } from "../utils/constants";
 import toast from "react-hot-toast";
+import {Fade} from "react-reveal";
 
 const MoviePage = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -38,6 +39,7 @@ const MoviePage = () => {
       <Header />
       <div className="pt-24 bg-stone-900">
         {trendingMovies?.length > 0 ? (
+          <Fade bottom>
           <div className="w-full mx-auto bg-stone-900 p-10 pt-20">
             <p className=" text-2xl font-semibold">Trending Movies</p>
             <div className="flex mx-auto mt-4 p-2 justify-between flex-wrap">
@@ -64,6 +66,7 @@ const MoviePage = () => {
               </button>
             </div>
           </div>
+          </Fade>
         ) : (
           <Loader />
         )}

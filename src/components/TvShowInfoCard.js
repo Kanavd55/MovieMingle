@@ -5,6 +5,7 @@ import Fade from "react-reveal/Fade";
 import Loader from './Loader';
 
 const TvShowInfoCard = ({tvShowInfo}) => {
+  console.log(tvShowInfo);
   return (
     <div className="h-auto bg-stone-900 -z-10">
       {tvShowInfo ? (
@@ -23,7 +24,7 @@ const TvShowInfoCard = ({tvShowInfo}) => {
               <Fade top>
                 <p className="my-6">
                   <span className="text-3xl my-3">
-                    {tvShowInfo.original_title}
+                    {tvShowInfo.original_name}
                   </span>
                   <p className="my-2 text-gray-300">
                     {tvShowInfo.genres.map((genre) => genre.name).join(",")}

@@ -17,10 +17,10 @@ const Footer = () => {
                     Company
                 </li>
                 <li className='text-gray-300 m-2'>
-                    <Link to="/developerInfo">Developer</Link>
+                    <Link to="/developerInfo" className='hover:underline'>Developer</Link>
                 </li>
-                <li className='text-gray-300 m-2'>
-                    <Link to="/movies">Movies</Link>
+                <li className='text-gray-300  m-2'>
+                    <Link to="/movies" className='hover:underline'>Movies</Link>
                 </li>
                 <li className='text-gray-300 m-2'>
                     Career

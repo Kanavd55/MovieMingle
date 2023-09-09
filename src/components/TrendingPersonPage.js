@@ -4,6 +4,7 @@ import { API_OPTIONS, Get_Trending_Personalities_URL} from "../utils/constants";
 import Loader from "./Loader";
 import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
+import { Fade } from 'react-reveal';
 import Footer from "./Footer";
 
 const TrendingPersonPage = () => {
@@ -36,6 +37,7 @@ const TrendingPersonPage = () => {
         <Header />
         <div className="pt-24 bg-stone-900">
           {trendingPeople?.length > 0 ? (
+            <Fade bottom>
             <div className="w-full mx-auto bg-stone-900 p-10 pt-20">
               <p className=" text-2xl font-semibold">Trending Personalities</p>
               <div className="flex mx-auto mt-4 p-2 justify-between flex-wrap">
@@ -59,6 +61,7 @@ const TrendingPersonPage = () => {
                 </button>
               </div>
             </div>
+            </Fade>
           ) : (
             <Loader />
           )}

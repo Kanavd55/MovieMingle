@@ -5,6 +5,7 @@ import Loader from "./Loader";
 import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
 import Footer from "./Footer";
+import {Fade} from "react-reveal"
 
 const TvShowPage = () => {
   const [trendingShows, setTrendingShows] = useState([]);
@@ -36,6 +37,7 @@ const TvShowPage = () => {
       <Header />
       <div className="pt-24 bg-stone-900">
         {trendingShows?.length > 0 ? (
+          <Fade bottom>
           <div className="w-full mx-auto bg-stone-900 p-10 pt-20">
             <p className=" text-2xl font-semibold">Trending Shows</p>
             <div className="flex mx-auto mt-4 p-2 justify-between flex-wrap">
@@ -59,6 +61,7 @@ const TvShowPage = () => {
               </button>
             </div>
           </div>
+          </Fade>
         ) : (
           <Loader />
         )}

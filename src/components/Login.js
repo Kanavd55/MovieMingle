@@ -43,7 +43,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          toast("User logged in")
+          toast(user.displayName +" is logged in")
           // ...
         })
         .catch((error) => {
@@ -67,7 +67,7 @@ const Login = () => {
           })
             .then(() => {
               // Profile updated!
-              toast("User is created and logged in now!")
+              toast("User "+user.displayName +" is created and logged in!")
               // ...
             })
             .catch((error) => {
@@ -118,13 +118,13 @@ const Login = () => {
         <p className="text-red-500 font-bold text-lg py-2">{errorMessage}</p>
         <button
           onClick={handleSubmitForm}
-          className="bg-red-800 my-5 w-full p-2 rounded-lg"
+          className="bg-red-700 hover:bg-red-600 my-5 w-full p-2 rounded-lg"
         >
           Submit
         </button>
         <p className="py-4 cursor-pointer hover:underline" onClick={toggleForm}>
           {isSignInForm
-            ? "New to MovieMingle? Sign Up Now"
+            ? "New to CineUniverse? Sign Up Now"
             : "Already registered? Sign In Now"}
         </p>
         {!isSignInForm && (

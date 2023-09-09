@@ -2,6 +2,7 @@ import React from "react";
 import { IMG_CDN } from "../utils/constants";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Fade } from 'react-reveal';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -12,6 +13,7 @@ import { Autoplay,Pagination} from 'swiper/modules';
 
 const MoviesList = ({ title, movies }) => {
   return (
+    <Fade right>
     <div className="w-10/12 mx-auto text-white">
       {movies && (
         <>
@@ -67,6 +69,7 @@ const MoviesList = ({ title, movies }) => {
         </>
       )}
     </div>
+    </Fade>
   );
 };
 
