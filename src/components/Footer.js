@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
+    const date=new Date().getFullYear();
   return (
     <div className='bg-stone-800 shadow-inner text-xs pb-4 sm:text-base text-white w-auto'>
         <div className='w-10/12 mx-auto h-auto flex-wrap items-center flex justify-around'>
@@ -9,7 +10,7 @@ const Footer = () => {
             <div className='flex justify-start'>
                 <span className='font-semibold text-center p-2'>CineUniverse</span>
             </div>
-            <p className='break-words text-gray-300 w-full'>Copyright @2023. CineUniverse By Kanav</p>     
+            <p className='break-words text-gray-300 w-full'>Copyright @{date}. CineUniverse By Kanav</p>     
         </div>
         <div className='w-[40%] md:w-[20%] p-2'>
             <ul className='m-1 p-1'>
@@ -49,7 +50,7 @@ const Footer = () => {
                     Contact Us
                 </li>
                 <li className='m-2 text-gray-300'>
-                    Vijay Nagar,Delhi-110009
+                    Vijay Nagar,Delhi-09
                 </li>
                 <li className='m-2 text-gray-300'>
                     +919999999999

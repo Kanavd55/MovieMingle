@@ -59,6 +59,13 @@ const DeveloperInfoCard = () => {
                   
                   <p className="text-gray-200 text-xl font-semibold mt-8">Connect with me</p>
                   <div className="flex flex-wrap justify-start">
+                  <Link
+                      to={"https://kanav-portfolio.netlify.app"}
+                      target="_blank"
+                      className=" my-2 text-black font-semibold rounded-lg p-3 mx-2 bg-white hover:bg-gray-300"
+                    >
+                      Portfolio 
+                    </Link>
                     <Link
                       to={"https://www.linkedin.com/in/kd28/"}
                       target="_blank"
@@ -76,10 +83,11 @@ const DeveloperInfoCard = () => {
                     <Link
                       to={"mailto:kanavdahat55@gmail.com"}
                       target="_blank"
-                      className="my-2 text-red-700 font-semibold rounded-lg p-3 mx-2 bg-white hover:bg-gray-300"
+                      className="my-2 text-white font-semibold rounded-lg p-3 mx-2 bg-red-700 hover:bg-red-600"
                     >
                       Gmail
                     </Link>
+                    
                   </div>
                 </Fade>
               </div>
